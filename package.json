@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@hackernoon/pixel-icon-library": "^1.0.5",
+    "@sakun/system.css": "^0.1.11"
+  }
+}
