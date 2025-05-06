@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/*------SECTION ONE ------*/
+#section-one {
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: ;
+    gap:;
+    
+}
+
+#section-one > * {
+    width: auto;
+}
+
+#section-one .all-icons {
+    margin-top: auto;
+}
+
+.texts-section-one {
+    order: -1;
+}
+
+.texts-section-one p {
+    margin-bottom: 20px;
+}
