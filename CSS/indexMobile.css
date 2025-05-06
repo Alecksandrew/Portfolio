@@ -26,7 +26,11 @@ body {
 
 
 section {
-    padding: 30px 0px 30px 0px;
+    padding: 30px 0px;
+}
+
+h2 {
+    font-size: clamp(1.2rem, 6.5vw, 2rem);
 }
 
 
@@ -37,7 +41,7 @@ header {
     padding: 1vh 0 1.2vh 0;
     width: 100%;
     display: grid;
-    grid-template: 1fr / repeat(3, 25%);
+    grid-template: 1fr / repeat(3, 32%);
     grid-template-areas: 
     "left-side center right-side";
     justify-content: space-around;
@@ -61,6 +65,7 @@ header {
     position: absolute;
     height: 100dvh;
     width: 60vw;
+
     background-color: var(--Paleta01);
 
     transform: translateX(-60vw);
@@ -217,19 +222,17 @@ h1 {
 }
 
 .skills-icons {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100%;
-    gap: 8px;
+    display: grid;
+    grid-template: repeat(3, clamp(100px, 15vh, 150px)) / repeat(2, clamp(130px, 45vw, 220px)) ;
+    gap: 5px;
+    place-content: center;
+
 
 }
 
 .icon-text {
-
-    width: clamp(100px, 40%, 300px);
-
-    height: 15vh;
+    width: 100%;
+    height: 100%;
     border: 3px solid var(--Paleta01);
     padding: 15px;
 
@@ -285,7 +288,7 @@ h1 {
 }
 
 #section-two .icon-text p {
-    font-size: clamp(0.7rem, 3vw, 2rem);
+    font-size: clamp(0.7rem, 2.2vw, 1.2rem);
 }
 
 
@@ -303,35 +306,40 @@ h1 {
 #section-three h2 {
     color: var(--Paleta03);
     text-align: center;
+    margin-bottom: 20px;
     
 }
 
 .project-card {
     width: 90%;
     height: 520px;
+    max-width: 900px;
     border-radius: 5px;
     overflow: hidden;
     border: 3px solid var(--Paleta03);
 
-    display: flex;
+    display: grid;
+   /* grid-template: clamp(200px, 50%, 400px) 1fr / 1fr ; */
+    grid-template: minmax(0px, 1fr) 1fr / 1fr;
+    /*display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    align-items: center; */
 }
 
 .project-card h3 {
-    font-size: 1.16rem;
+    font-size: clamp(1.16rem, 2.3vw, 1.7rem);
     color: var(--Paleta03);
 }
 .project-card img {
     width: 100%;
-    height: 40%;
+    height: 100%;
     object-fit: cover;
     background-color: var(--Paleta02);
 }
 
 .info-about-project {
     padding:  10px;
-    margin-top: auto;
+    
 
 }
 
@@ -394,12 +402,14 @@ h1 {
 }
 
 #section-four form {
+    display: flex;
+    flex-flow: column nowrap;
     width: 80%;
+    max-width: 500px;
 }
 
 #section-four h2 {
     margin-bottom: 40px;
-    font-size: 1.5rem;
 }
 
 #section-four input, #section-four textarea {
@@ -422,4 +432,9 @@ h1 {
     background-color: var(--Paleta01) ;
     margin-top: 20px;
     color: var(--Paleta03);
+    margin-bottom: 0px;
+}
+
+#section-four .all-icons {
+    display: none;
 }
