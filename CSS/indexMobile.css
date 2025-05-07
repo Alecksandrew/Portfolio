@@ -1,7 +1,7 @@
 
 @charset "UTF-8";
 
-import "@hackernoon/pixel-icon-library/fonts/iconfont.css";
+@import "node_modules/@hackernoon/pixel-icon-library/fonts/iconfont.css";
 
 * {
     padding: 0;
