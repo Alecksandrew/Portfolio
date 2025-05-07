@@ -60,6 +60,10 @@
     
 }
 
+.tela-inicial .hn::before {
+    display: none;
+}
+
 .tela-inicial .hn::after {
 	font-family: iconfont !important;
 	font-style: normal;
@@ -74,7 +78,8 @@
 
 @keyframes saídaTelaInicial {
     
-    0% { transform: translateY(0);}
+    0% { transform: translateY(0);
+          position: absolute;}
     
     25% { transform: translateY(-30%);}
     
