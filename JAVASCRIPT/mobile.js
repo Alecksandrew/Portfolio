@@ -67,24 +67,25 @@ window.addEventListener("keydown", () => { backgroundSong.play()});
 // CONTROLE DE VOLUME E PERSONALIZAÇÃO NO HEADER
 
 let volumeControl = document.getElementById("volume");
+let volumeMutedOrNot;
 
-
+backgroundSong.loop = true;
 backgroundSong.volume = 0.3; // Valor padrão da musica
 volumeControl.value = 0.3; //Valor padrão da track de volume
 
 volumeControl.addEventListener("input", () => {
-    backgroundSong.volume = volumeControl.value;
+    volumeMutedOrNot = volumeControl.value;
     root.style.setProperty("--ProgressTrack", volumeControl.value*100 +"%" );
 
-    if(volumeControl < 0.1) {
-        backgroundSong.muted = true;
-    }
-    else {
-        backgroundSong.muted = false;
-    }
+    if(!backgroundSong.muted) {
+        backgroundSong.volume = volumeMutedOrNot;
+    };
+    
+    
 });
 
 
+//TROCAR ICONE PARA MUTADO DESMUTADO NO HEADER
 let soundIcon = document.querySelector(".song-control-container .hn");
 
 soundIcon.addEventListener("click", () => {
@@ -95,8 +96,8 @@ soundIcon.addEventListener("click", () => {
         backgroundSong.muted = true;
     }
     else {
-        backgroundSong.volume = volumeControl.value;
         backgroundSong.muted = false;
+        backgroundSong.volume = volumeMutedOrNot;
     };
 
 });
@@ -106,7 +107,14 @@ soundIcon.addEventListener("click", () => {
 let headerMenuOptions = document.querySelector("header > .all-menu-options");
 let iconMenuHamburguer = document.querySelector(".menuHamburguer");
 let iconMenuClose = document.querySelector(".hn-window-close-solid");
+
 let menuHamburguerSound = new Audio("ASSETS/soundseffects/experimental-8-bit-sound-270302.mp3");
+let menuCloseSound = new Audio("ASSETS/soundseffects/experimental-8-bit-sound-270302-reversed-edited.mp3");
+
+menuHamburguerSound.volume = 0.5;
+menuHamburguerSound.playbackRate = 0.8;
+menuCloseSound.volume = 0.5;
+menuCloseSound.playbackRate = 0.8;
 
 iconMenuHamburguer.addEventListener("click", ()=> {
     headerMenuOptions.classList.add("shadow-visible");
@@ -121,6 +129,7 @@ iconMenuClose.addEventListener("click", () => {
     headerMenuOptions.classList.remove("shadow-visible");
     headerMenuOptions.style.transform = "translateX(-60vw)";
     iconMenuHamburguer.style.color = cor03;
+    menuCloseSound.play();
    
 });
 
@@ -131,6 +140,9 @@ iconMenuClose.addEventListener("click", () => {
 let headerMenuList = document.querySelectorAll("header ul li"); // All Menu Options
 let hoverMenuSoundEffect = new Audio("ASSETS/soundseffects/mixkit-arcade-game-jump-coin.wav"); //Sound effect between menu options
 let clickMenuSound = new Audio("ASSETS/soundseffects/gameboy-pluck.mp3") // Sound effect when you click a menu option
+
+hoverMenuSoundEffect.volume = 0.8;
+clickMenuSound.volume = 0.8;
 
 headerMenuList.forEach((li, index) => {
     li.addEventListener("click", () => {
@@ -146,3 +158,19 @@ headerMenuList.forEach((li, index) => {
 
 /*-------- SECTION ONE -------------- */
 
+
+
+
+/*-------- SECTION TWO -------------- */
+
+let skillSound = new Audio("ASSETS/soundseffects/retro-coin.mp3");
+let skillsIcons = document.querySelectorAll(".icon-text");
+
+skillSound.volume = 0.25;
+
+skillsIcons.forEach((icon) => {
+    icon.addEventListener("mouseenter", () => {
+        skillSound.currentTime = 0;
+        skillSound.play();
+    });
+});
