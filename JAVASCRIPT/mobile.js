@@ -34,7 +34,10 @@ initialOptions.forEach((option, index) => {
         initialOptionsSound.play();
         window.location.href = "#" + IdSections[index];
         telaInicial.style.animation = "saídaTelaInicial 2.5s ease-in-out 1 forwards";
-        setTimeout(() => {document.body.style.overflow = "unset"}, 2500) //VOLTANDO COM O OVERFLOW QUE FOI TIRADO
+        setTimeout(() => {
+            document.body.style.overflow = "unset"
+            document.documentElement.style.scrollBehavior = "smooth";
+        }, 2500) //VOLTANDO COM O OVERFLOW QUE FOI TIRADO E COM SCROOL SMOOTH 
     })
 });
 
@@ -55,7 +58,7 @@ initialOptions.forEach((option) => {
 
 // VOLTAR COM SCROLL SMOOTH QUE TIREI NA TELA INICIAL E VOLTAR COM OVERFLOW DO BODY
 
-document.documentElement.style.scrollBehavior = "smooth";
+
 
 //ABRIR E FECHAR MENU HAMBURGUER PARA MOBILE
 let headerMenuOptions = document.querySelector("header > .all-menu-options");

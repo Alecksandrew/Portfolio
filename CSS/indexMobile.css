@@ -1,7 +1,6 @@
 
 @charset "UTF-8";
 
-@import "node_modules/@hackernoon/pixel-icon-library/fonts/iconfont.css";
 
 * {
     padding: 0;
@@ -81,7 +80,7 @@
 @keyframes saídaTelaInicial {
     
     0% { transform: translateY(0);
-          position: absolute;}
+          }
     
     25% { transform: translateY(-30%);}
     
@@ -225,6 +224,8 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+
+    scroll-margin-top: 50px; 
 }
 
 #section-one > * {
