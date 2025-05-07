@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+#section-three {
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#section-three h2 {
+    width: 100%;
+}
+
+#section-three .project-card {
+    padding-left: 0;
+}
+
+.project-card:nth-child(even) img {
+    grid-area: unset;
+}
