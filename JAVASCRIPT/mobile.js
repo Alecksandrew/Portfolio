@@ -66,9 +66,33 @@ window.addEventListener("keydown", () => {
 });
 
 // CONTROLE DE VOLUME E PERSONALIZAÇÃO NO HEADER
-
-let volumeControl = document.getElementById("volume");
+let mediaQuery768 = window.matchMedia('(min-width: 768px)');
+let songContainer= document.querySelector(".song-control-container");
 let volumeMutedOrNot;
+let allMenuOptions = document.querySelector(".all-menu-options");
+let iconMenuClose = document.querySelector(".hn-window-close-solid");
+let volumeControl = songContainer.querySelector("#volume");
+let header = document.querySelector("header");
+
+function songAndMediaQuery (mq) {
+   
+  if (mq.matches) {
+    allMenuOptions.insertBefore(songContainer, iconMenuClose );
+  }
+  else {
+    header.insertBefore(songContainer, allMenuOptions);
+  };
+
+};
+
+songAndMediaQuery(mediaQuery768);
+mediaQuery768.addEventListener("change", () => {
+  songAndMediaQuery(mediaQuery768);
+});
+
+
+
+
 
 backgroundSong.loop = true;
 backgroundSong.volume = 0.3; // Valor padrão da musica
@@ -80,11 +104,14 @@ volumeControl.addEventListener("input", () => {
 
   if (!backgroundSong.muted) {
     backgroundSong.volume = volumeMutedOrNot;
-  }
+  };
+
 });
 
 //TROCAR ICONE PARA MUTADO DESMUTADO NO HEADER
-let soundIcon = document.querySelector(".song-control-container .hn");
+
+let soundIcon = songContainer.querySelector(".song-control-container .hn")
+
 
 soundIcon.addEventListener("click", () => {
   soundIcon.classList.toggle("hn-sound-on-solid");
@@ -101,7 +128,7 @@ soundIcon.addEventListener("click", () => {
 //ABRIR E FECHAR MENU HAMBURGUER PARA MOBILE
 let headerMenuOptions = document.querySelector("header > .all-menu-options");
 let iconMenuHamburguer = document.querySelector(".menuHamburguer");
-let iconMenuClose = document.querySelector(".hn-window-close-solid");
+
 
 let menuHamburguerSound = new Audio(
   "ASSETS/soundseffects/experimental-8-bit-sound-270302.mp3"

@@ -13,6 +13,11 @@
   --Font01: "Press Start 2P";
 
   --ProgressTrack: 30%;
+
+}
+
+html, body {
+  width: 100vw;
 }
 
 /*--------- TELA INICIAL --------*/
@@ -135,7 +140,7 @@ header {
   align-items: center;
   gap: 10px;
   height: 32px;
-  z-index: 0;
+  z-index: -1;
   margin-left: 10px;
 }
 
@@ -244,9 +249,7 @@ input[type="range"]::-moz-range-track {
   opacity: 1;
 }
 
-.all-menu-options > .song-control-container {
-    display: none;
-}
+
 
 .menu-options-li {
   list-style-type: none;

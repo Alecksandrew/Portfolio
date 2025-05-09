@@ -15,9 +15,6 @@ header {
 }
 
 
-header > .song-control-container {
-    display: none;
-}
 
 .menuHamburguer {
     display: none;
@@ -47,9 +44,6 @@ header > .song-control-container {
     display: none;
 }
 
-.all-menu-options > .song-control-container {
-    display: flex;
-}
 
 .hn-window-close-solid {
     display: none;
