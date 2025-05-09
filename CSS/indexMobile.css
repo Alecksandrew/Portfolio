@@ -221,7 +221,7 @@ input[type="range"]::-moz-range-track {
 }
 
 .all-menu-options {
-  position: absolute;
+  position: fixed;
   height: 100dvh;
   width: 60vw;
 
@@ -237,7 +237,6 @@ input[type="range"]::-moz-range-track {
   width: 160vw;
   height: 100vh;
   z-index: -1;
-  position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
@@ -272,7 +271,7 @@ input[type="range"]::-moz-range-track {
 .all-menu-options button {
   border: none;
   font-family: var(--Font01);
-  font-size: 1rem;
+  font-size: 0.7rem;
   padding: 5px;
   box-shadow: none;
   outline: none;
@@ -451,7 +450,7 @@ h1 {
 
 .project-card {
   width: 90%;
-  height: 520px;
+  height: calc(710px - 25vw);
   max-width: 900px;
   border-radius: 5px;
   overflow: hidden;
@@ -459,7 +458,7 @@ h1 {
 
   display: grid;
   /* grid-template: clamp(200px, 50%, 400px) 1fr / 1fr ; */
-  grid-template: minmax(0px, 1fr) 1fr / 1fr;
+  grid-template: 190px 1fr / 1fr;
   /*display: flex;
     flex-flow: column nowrap;
     align-items: center; */
@@ -478,6 +477,8 @@ h1 {
 
 .info-about-project {
   padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .info-about-project h3 {
@@ -511,15 +512,27 @@ h1 {
   font-size: 0.8rem;
   color: var(--Paleta02);
   margin-bottom: 35px;
+  line-height: clamp(15px, 1vw, 20px);
+
 }
 
-.project-card button {
+.container-project-buttons {
+  width: 100%;
+  display: flex;
+  margin-top: auto;
+  justify-content: space-between;
+}
+
+.project-card .info-about-project button {
   background-color: var(--Paleta03);
   color: var(--Paleta01);
   border: none;
   border-radius: 3px;
   font-family: var(--Font01);
   padding: 12px;
+  margin-top: auto;
+
+  flex: 0 0 45%;
 }
 
 /*--------- SECTION FOUR ------------- */
