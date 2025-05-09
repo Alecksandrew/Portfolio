@@ -34,7 +34,7 @@ initialOptions.forEach((option, index) => {
     telaInicial.style.animation =
       "saídaTelaInicial 2.5s ease-in-out 1 forwards";
     setTimeout(() => {
-      root.style.overflow = "unset";
+      document.body.style.overflow = "unset";
       root.style.scrollBehavior = "smooth";
     }, 2500); //VOLTANDO COM O OVERFLOW QUE FOI TIRADO E COM SCROOL SMOOTH
   });
