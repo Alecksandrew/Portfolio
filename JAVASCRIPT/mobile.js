@@ -34,7 +34,7 @@ initialOptions.forEach((option, index) => {
     telaInicial.style.animation =
       "saídaTelaInicial 2.5s ease-in-out 1 forwards";
     setTimeout(() => {
-      document.body.style.overflow = "unset";
+      root.style.overflow = "unset";
       root.style.scrollBehavior = "smooth";
     }, 2500); //VOLTANDO COM O OVERFLOW QUE FOI TIRADO E COM SCROOL SMOOTH
   });
@@ -126,9 +126,8 @@ soundIcon.addEventListener("click", () => {
 });
 
 //ABRIR E FECHAR MENU HAMBURGUER PARA MOBILE
-let headerMenuOptions = document.querySelector("header > .all-menu-options");
+let shadowMenuMobile = document.querySelector(".shadow-fullscreen");
 let iconMenuHamburguer = document.querySelector(".menuHamburguer");
-
 
 let menuHamburguerSound = new Audio(
   "ASSETS/soundseffects/experimental-8-bit-sound-270302.mp3"
@@ -142,18 +141,40 @@ menuHamburguerSound.playbackRate = 0.8;
 menuCloseSound.volume = 0.5;
 menuCloseSound.playbackRate = 0.8;
 
+  //LOGICA PARA ARRUMAR BUG DE PASSAR DO CELULAR PARA PC E MENU BUGAR
+mediaQuery768.addEventListener("change", () => { 
+    allMenuOptions.classList.remove("animado");
+    
+    if(mediaQuery768.matches) {
+      allMenuOptions.style.transform = "translateX(0)";
+    }
+    else {
+      allMenuOptions.style.transform = "translateX(-60vw)";
+      
+
+      
+    }
+
+})
+
 iconMenuHamburguer.addEventListener("click", () => {
-  headerMenuOptions.classList.add("shadow-visible");
-  headerMenuOptions.style.transform = "translateX(0)";
-  iconMenuHamburguer.style.color = cor02;
-  menuHamburguerSound.play();
+        shadowMenuMobile.classList.remove("hidden");
+        allMenuOptions.classList.add("animado");
+        allMenuOptions.style.transform = "translateX(0)";
+        iconMenuHamburguer.style.color = cor02;
+        menuHamburguerSound.play();
 });
 
-iconMenuClose.addEventListener("click", () => {
-  headerMenuOptions.classList.remove("shadow-visible");
-  headerMenuOptions.style.transform = "translateX(-60vw)";
-  iconMenuHamburguer.style.color = cor03;
-  menuCloseSound.play();
+      iconMenuClose.addEventListener("click", () => {
+        shadowMenuMobile.classList.add("hidden");
+        allMenuOptions.style.transform = "translateX(-60vw)";
+        iconMenuHamburguer.style.color = cor03;
+        menuCloseSound.play();
+        
+        allMenuOptions.addEventListener("transitionend" , () => {
+          allMenuOptions.classList.remove("animado");
+        }, {once:true});
+        
 });
 
 //REDIRECIONAMENTO ENTRE SECTIONS AO CLICAR NO LI

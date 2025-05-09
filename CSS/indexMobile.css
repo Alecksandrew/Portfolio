@@ -13,12 +13,10 @@
   --Font01: "Press Start 2P";
 
   --ProgressTrack: 30%;
-
+  overflow: hidden;
 }
 
-html, body {
-  width: 100vw;
-}
+
 
 /*--------- TELA INICIAL --------*/
 
@@ -108,7 +106,7 @@ body {
   background-color: var(--Paleta03);
   position: relative;
 
-  overflow: hidden; /*-----USAR ISSO ENQUANTO TELA INICIAL ESTIVAR APARECENDO, DEPOIS VOLTAR AO NORMAL---*/
+   /*-----USAR ISSO ENQUANTO TELA INICIAL ESTIVAR APARECENDO, DEPOIS VOLTAR AO NORMAL---*/
 }
 
 section {
@@ -221,31 +219,39 @@ input[type="range"]::-moz-range-track {
 }
 
 .all-menu-options {
-  position: fixed;
+  position: absolute;
   height: 100dvh;
   width: 60vw;
-
+  z-index: 4;
   background-color: var(--Paleta01);
-
   transform: translateX(-60vw);
+  /*  */
+}
+
+.animado {
   transition: transform 1.2s ease-in-out;
 }
 
 .all-menu-options::before {
   content: "";
-  background-color: #303030b7; /*---Fazer uma transition junto com menu---*/
-  width: 160vw;
-  height: 100vh;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-  pointer-events: none;
+  
 }
 
-.all-menu-options.shadow-visible::before {
+.shadow-fullscreen {
+  background-color: #2000b1b7; /*---Fazer uma transition junto com menu---*/
+  width: 160vw;
+  height: 100vh;
+  z-index: 3;
+  top: 0;
+  left: 0;
   opacity: 1;
+  transition: opacity 1.2s ease-in-out;
+  pointer-events: none;
+  position: absolute;
+}
+
+.shadow-fullscreen.hidden {
+  opacity: 0;
 }
 
 
