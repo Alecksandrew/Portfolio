@@ -110,7 +110,7 @@ header {
 #section-three {}
 
 .project-card {
-    grid-template: 1fr / minmax(0px, 1fr) 1fr;
+    grid-template: 400px / 1fr 1fr;
     gap: 10px;
     height: 400px;
     align-items: center;
@@ -118,7 +118,9 @@ header {
 }
 
 .project-card img {
-
+    max-height: 100%;
+    object-fit: cover;
+    object-position: top center;
 }
 
 .project-card:nth-child(even) {
@@ -131,10 +133,21 @@ header {
 }
 
 .info-about-project {
-    
+    height: 100%;
     
 }
 
+.project-card h3 {
+    margin-top: 20px;
+}
+
+.container-project-buttons {
+    margin-bottom: 20px;
+}
+
+.container-project-buttons:first-child {
+    margin: 0;
+}
 /*------SECTION FOUR-------*/
 
 
