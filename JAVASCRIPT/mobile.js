@@ -233,7 +233,10 @@ let linksForProjects = [
     codigo: "https://github.com/Alecksandrew/Game-store",
     deploy: "https://alecksandrew.github.io/Game-store/",
   },
-  { codigo: "BOTAO DE CODIGO CARD2", deploy: "BOTAO DE DEPLOY CARD2" },
+  { 
+    codigo: "https://github.com/Alecksandrew/recipe-project", 
+    deploy: "https://alecksandrew.github.io/recipe-project/" 
+},
   { codigo: "BOTAO DE CODIGO CARD3", deploy: "BOTAO DE DEPLOY CARD3" },
   { codigo: "BOTAO DE CODIGO CARD4", deploy: "BOTAO DE DEPLOY CARD4" },
 ];
