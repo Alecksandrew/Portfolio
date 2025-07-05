@@ -235,7 +235,7 @@ let linksForProjects = [
   },
   { 
     codigo: "https://github.com/Alecksandrew/recipe-project", 
-    deploy: "https://alecksandrew.github.io/recipe-project/" 
+    deploy: "https://recipe-project-one-wheat.vercel.app/" 
 },
   { codigo: "BOTAO DE CODIGO CARD3", deploy: "BOTAO DE DEPLOY CARD3" },
   { codigo: "BOTAO DE CODIGO CARD4", deploy: "BOTAO DE DEPLOY CARD4" },
